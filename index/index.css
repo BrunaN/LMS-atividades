@@ -1,6 +1,9 @@
 body {
     margin: 0;
     font-family: "Courier New", Courier, monospace;
+    box-shadow: 0 2px 4px 0 #888;
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -18,10 +21,6 @@ header h1 {
     font-size: 25px;
 }
 
-div#content h2{
-    margin: 0;
-    }
-
 div#content {
     width: 80vw;
     float: right;
@@ -32,6 +31,10 @@ div#content {
     box-sizing: border-box;
     padding-left: 15px;
     padding-top: 10px;
+}
+
+div#content h2 {
+    margin: 0;
 }
 
 ul {
@@ -60,4 +63,5 @@ ul li a {
 
 ul li a:hover {
     color: #49424C;
+    background-color: #6D7A96;
 }
