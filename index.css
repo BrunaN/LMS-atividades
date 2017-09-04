@@ -1,9 +1,6 @@
 body {
     margin: 0;
     font-family: "Courier New", Courier, monospace;
-    box-shadow: 0 2px 4px 0 #888;
-    position: relative;
-    z-index: 1;
 }
 
 header {
@@ -13,6 +10,9 @@ header {
     height: 64px;
     line-height:64px;
     background-color: #6D7A96;
+    box-shadow: 0 2px 4px 0 #888;
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
@@ -63,5 +63,4 @@ ul li a {
 
 ul li a:hover {
     color: #49424C;
-    background-color: #6D7A96;
 }
