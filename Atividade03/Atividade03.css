@@ -58,6 +58,7 @@
     position: relative;
     box-sizing: border-box;
     z-index: -1;
+    padding-bottom: 6rem;
 }
 
 .artigos {
@@ -100,7 +101,7 @@ img {
     box-sizing: border-box;
 }
 
-footer {
+.contanier footer {
     color: #757575;
     margin-top: 10px;
     width: 100%;
@@ -108,7 +109,7 @@ footer {
     background-image: url(gradient_bg_inverso.png);
     background-size: auto 100%;
     text-align: center;
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     bottom: 0;
     padding: 40px 0 15px 0;
