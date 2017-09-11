@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
 }
 
 body {
@@ -14,7 +14,8 @@ body {
 
 #navegador {
     height: 100px;
-    width: 100vw;
+    left: 0;
+    right: 0;
     padding: 0 60px;
     background-image: url(gradient_bg.png);
     background-size: auto 100%;
