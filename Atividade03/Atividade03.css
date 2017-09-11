@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Lucida Sans', Verdana, sans-serif;
 }
 
 #navegador {
@@ -13,6 +12,7 @@
     background-size: auto 100%;
     text-align: center;
     color: #a1887f;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
     font-size: 11pt;
     box-sizing: border-box;
     position: fixed;
@@ -59,9 +59,10 @@
     box-sizing: border-box;
     z-index: -1;
     padding-bottom: 6rem;
+    font-family: 'Lucida Sans', Verdana, sans-serif;
 }
 
-.artigos {
+.contanier .artigos {
     width: 60vw;
     padding: 15px;
     border: 4px double #b39ddb;
@@ -72,25 +73,25 @@
     color: #424242;
 }
 
-.titulos{
+.contanier .titulos{
     padding-bottom: 5px;
     color: #795548;
     font-size: 15px;
     text-transform: uppercase; 
 }
 
-.artigos p {
+.contanier .artigos p {
     padding-bottom: 10px;
     text-align: justify;
 }
 
-.subtitulos {
+.contanier .subtitulos {
     padding: 5px 0; 
     border-top: 1px dashed #9575cd;
     color: #a1887f;
 }
 
-img {
+.contanier img {
     display: block;
     width: 60vw;
     padding: 0;
@@ -101,7 +102,7 @@ img {
     box-sizing: border-box;
 }
 
-.contanier footer {
+footer {
     color: #757575;
     margin-top: 10px;
     width: 100%;
