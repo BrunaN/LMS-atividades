@@ -266,6 +266,7 @@ header > nav > ul > li {
     
     #div-direita{
         width: 100vw;
+        height: auto;
         min-height: 100px;
         bottom: 0;
     }
