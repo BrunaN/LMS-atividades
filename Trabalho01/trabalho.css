@@ -177,9 +177,9 @@ header > nav > ul > li {
 }
 
 .container {
+    float: left;
     width: 68vw;
     box-sizing: border-box;
-    float: left;
 }
 
 .conteudo {
@@ -190,7 +190,7 @@ header > nav > ul > li {
     margin-bottom: 10px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #3579B2;;
+    border: 1px solid #3579B2;
 }
 
 #ani img{
