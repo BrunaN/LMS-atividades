@@ -154,7 +154,7 @@ header > nav > ul > li {
 #div-direita {
     float: right;
     display: block;
-    height: calc(100vh - 50px);
+    height: auto;
     width: 15vw;
     box-sizing: border-box;
     background: linear-gradient(#FA9B98,#fff);
@@ -182,6 +182,7 @@ header > nav > ul > li {
     float: left;
     width: 68.75vw;
     box-sizing: border-box;
+    height: 1000px;
 }
 
 .conteudo {
@@ -258,6 +259,7 @@ header > nav > ul > li {
         box-sizing: border-box;
         z-index: -1;
         padding-bottom: 100px;
+        height: auto;
     }
 
     .conteudo {
