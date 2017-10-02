@@ -56,11 +56,13 @@ button:active{
 #pesquisa { 
     right: 0;
     width: 200px;
-    height: 23px;
+    height: 25px;
     font-size: 17px;
     color: #3579B2;
     transition: all 0.80s;
     border-radius: 5px;
+    padding: 0 5px;
+    box-sizing: border-box;
 }
 
 #pesquisa:focus {
