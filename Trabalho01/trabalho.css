@@ -146,6 +146,7 @@ header > nav > ul > li {
     box-shadow: 2px 0 4px #C76562;;
     z-index: 2;
     font-size: 17px;
+    box-sizing: border-box;
 }
 
 #div-direita {
@@ -153,6 +154,7 @@ header > nav > ul > li {
     display: block;
     height: calc(100vh - 50px);
     width: 15vw;
+    box-sizing: border-box;
     background: linear-gradient(#FA9B98,#fff);
     text-align: center;
 }
@@ -174,6 +176,11 @@ header > nav > ul > li {
     background-color: #FF837E;
 }
 
+.container {
+    width: 68vw;
+    box-sizing: border-box;
+    float: left;
+}
 
 .conteudo {
     height: 400px;
@@ -243,7 +250,7 @@ header > nav > ul > li {
         z-index: -3;
     }
 
-    .contanier {
+    .container {
         position: relative;
         box-sizing: border-box;
         z-index: -1;
