@@ -1,0 +1,56 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+.menu-lateral{
+    height: auto;
+    width: 110px;
+    position: fixed;
+    background-color: #ccc;
+    text-align: center;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.menu-lateral ul li a{
+    display: block;
+    padding: 5px;
+}
+
+#container {
+    padding-left: 110px;
+}
+
+#container .cabecalho #botao {
+    display: none;
+}
+
+#accordeon ul li div {
+    max-height: 0;
+    overflow: hidden;
+}
+
+#accordeon ul li.active div{
+    max-height: 1000px;
+}
+
+@media screen and (max-width: 480px) {
+
+    #container {
+        padding-left: 10px;
+    }
+    
+    #container .cabecalho #botao{
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 0 5px;
+        display: inline-block;
+    }
+    
+    .menu-lateral {
+        transform: translateX(-110px);
+    }
+
+}
