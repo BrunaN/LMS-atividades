@@ -30,9 +30,12 @@ let show = function(event){
     event.target.style.borderRadius = "5px 5px 0 0"
     if(li.className == "active"){
         li.className = "";
-        event.target.style = ""
+        event.target.style = "";
         return;
     }
+    for (let i = 0, accordeonLinksLength = accordeonLinks.length; i<accordeonLinksLength; i++) {
+        accordeonLinks[i].style = "";
+    };
 
     for(let i=0, accordeonLiLength = accordeonLi.length; i<accordeonLiLength; i++){
         accordeonLi[i].className = "";
