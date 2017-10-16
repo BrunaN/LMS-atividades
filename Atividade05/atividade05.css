@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
 .menu-lateral{
     height: auto;
     width: 110px;
@@ -11,46 +15,100 @@
     text-align: center;
     box-sizing: border-box;
     height: 100vh;
+    top:0;
+    box-shadow: 1px 2px 2px #aaa;
+}
+
+.menu-lateral ul {
+    text-decoration: none;
+    list-style: none;
 }
 
 .menu-lateral ul li a{
     display: block;
-    padding: 5px;
+    padding: 7px;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: #bbb;
 }
 
 #container {
     padding-left: 110px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#container .cabecalho h1{
+    padding-bottom: 10px;
 }
 
 #container .cabecalho #botao {
     display: none;
 }
 
-#accordeon ul li div {
+#accordeon {
+    width: 80%;
+}
+
+#accordeon > ul > li > div {
     max-height: 0;
     overflow: hidden;
 }
 
 #accordeon ul li.active div{
     max-height: 1000px;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+}
+
+#accordeon ul {
+    list-style: none;
+}
+
+#accordeon ul li {
+    padding: 4px 0;
+}
+
+#accordeon ul li a {
+    background-color: #eee;
+    display: block;
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+    padding: 11px;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 480px) {
 
     #container {
-        padding-left: 10px;
+        padding: 0 10px;
     }
     
     #container .cabecalho #botao{
         display: block;
         font-size: 30px;
         cursor: pointer;
-        margin: 0 5px;
         display: inline-block;
+        color: #ccc;
+        background: #eee;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
     }
     
     .menu-lateral {
         transform: translateX(-110px);
+    }
+
+    #accordeon {
+        width: 100%
     }
 
 }

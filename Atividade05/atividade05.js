@@ -38,6 +38,7 @@ var show = function(event){
     }
 
     li.className = "active";
+    accordeonLinks[i].style.borderRadius = "5px 5px 0 0";
 };
 
 for (var i = 0, accordeonLinksLength = accordeonLinks.length; i<accordeonLinksLength; i++) {
