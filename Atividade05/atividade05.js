@@ -1,8 +1,8 @@
-var botao = document.getElementById("botao");
-var menu = document.getElementsByClassName("menu-lateral")[0];
-var container = document.getElementById("container");
+let botao = document.getElementById("botao");
+let menu = document.getElementsByClassName("menu-lateral")[0];
+let container = document.getElementById("container");
 
-var flag = false;
+let flag = false;
 
 botao.onclick = function(){
     if (!flag) {
@@ -23,24 +23,23 @@ window.onresize = function(){
     }
 };    
 
-var accordeonLinks = document.querySelectorAll("#accordeon ul li a");
-var accordeonLi = document.querySelectorAll("#accordeon ul li");
+let accordeonLinks = document.querySelectorAll("#accordeon ul li a");
+let accordeonLi = document.querySelectorAll("#accordeon ul li");
 
-var show = function(event){
-    var li = event.target.parentElement;
+let show = function(event){
+    let li = event.target.parentElement;
     if(li.className == "active"){
         li.className = "";
         return;
     }
 
-    for(var i=0, accordeonLiLength = accordeonLi.length; i<accordeonLiLength; i++){
+    for(let i=0, accordeonLiLength = accordeonLi.length; i<accordeonLiLength; i++){
         accordeonLi[i].className = "";
     }
 
     li.className = "active";
-    accordeonLinks[i].style.borderRadius = "5px 5px 0 0";
 };
 
-for (var i = 0, accordeonLinksLength = accordeonLinks.length; i<accordeonLinksLength; i++) {
+for (let i = 0, accordeonLinksLength = accordeonLinks.length; i<accordeonLinksLength; i++) {
     accordeonLinks[i].onclick = show;
 };
