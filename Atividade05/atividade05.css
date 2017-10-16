@@ -65,6 +65,7 @@ body {
     max-height: 1000px;
     padding: 11px;
     border: 1px solid #ccc;
+    border-top: none;
     border-radius: 0 0 5px 5px;
 }
 
