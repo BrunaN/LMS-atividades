@@ -87,7 +87,8 @@ body {
     cursor: pointer;
     height: 40px;
     font-size: 18px;
-    padding: 11px;
+    line-height: 40px;
+    padding: 0 11px;
     box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid #ccc;
