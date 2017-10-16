@@ -31,10 +31,11 @@ body {
     text-decoration: none;
     color: black;
     font-size: 18px;
+    transition: all .8s;
 }
 
 .menu-lateral ul li a:hover {
-    background-color: #bbb;
+    background-color: #aaa;
 }
 
 #container {
