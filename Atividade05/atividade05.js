@@ -25,11 +25,12 @@ window.onresize = function(){
 
 let accordeonLinks = document.querySelectorAll("#accordeon ul li a");
 let accordeonLi = document.querySelectorAll("#accordeon ul li");
-
 let show = function(event){
     let li = event.target.parentElement;
+    event.target.style.borderRadius = "5px 5px 0 0"
     if(li.className == "active"){
         li.className = "";
+        event.target.style = ""
         return;
     }
 
