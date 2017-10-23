@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+
+.layout {
+    width: 900px;
+    margin: auto;
+    height: 100vh;
+    border-right: 1px solid rgba(0, 0, 0, .10);
+    border-left: 1px solid rgba(0, 0, 0, .10);
+    box-sizing: border-box;
+}
+
+.layout .header {
+    height: 50px;
+    /* background-color: #ccc; */
+    border-bottom: 1px solid rgba(0, 0, 0, .10);
+    box-sizing: border-box;
+}
+
+.layout .header .name-software{
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, .10);
+    width: 240px;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100%;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+.layout .header .button-login{
+    float: right;
+    width: 110px;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 70px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .10);
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+}
+
+.button:hover{
+    background-color: #bbb;
+}
+
+.layout .header .name-contact {
+    width: 548px;
+    float: left;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.contacts-list {
+    float: left;
+    overflow: auto;
+    width: 240px;
+    height: calc(100vh - 50px);
+    z-index: 1;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(0, 0, 0, .10);
+    /* box-shadow: 1px 1px 4px black; */
+}
+
+.contacts-list::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.contacts-list::-webkit-scrollbar-track {
+    background-color: rgba(128, 122, 122, 0.2);
+    z-index: 1;
+    border-radius: 50px;
+}
+ 
+.contacts-list::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 50px;
+}
+
+.contacts-list .contact{
+    width: 100%;
+    height: 60px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.contacts-list .contact.active{
+    background-color: #ccc;
+}
+
+.contacts-list .contact:hover{
+    background-color: #bbb;
+}
+
+.contacts-list .contact .icon{
+    float: left;
+    width: 50px;
+    margin-right: 9px;
+}
+
+.contacts-list .contact .icon img{
+    height: 50px;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.contacts-list .contact .name{
+    line-height: 50px;
+}
+
+.messages{
+    width: 658px;
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    overflow: auto;
+    /* display: none; */
+    height: calc(100vh - 50px);
+}
+
+.messages::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+.messages::-webkit-scrollbar-track {
+    background-color: rgba(128, 122, 122, 0.2);
+    z-index: 1;
+    border-radius: 50px;
+}
+ 
+.messages::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 50px;
+}
+
+.messages .message{
+    margin-bottom: 3px;
+    box-sizing: border-box;
+}
+
+.message.me{
+    text-align: right;
+}
+
+.messages .message span{
+    border-radius: 20px;
+    height: auto;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    display: inline-block;
+    color: white;
+    background-color: #ccc;
+}
