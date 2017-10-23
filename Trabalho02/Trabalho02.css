@@ -106,7 +106,7 @@ body{
 }
 
 .contacts-list .contact:hover{
-    background-color: #bbb;
+    background-color: #ccc;
 }
 
 .contacts-list .contact .icon{
@@ -118,7 +118,7 @@ body{
 .contacts-list .contact .icon img{
     height: 50px;
     width: 100%;
-    background-color: #ccc;
+    background-color: #bbb;
     border-radius: 50%;
 }
 
@@ -169,4 +169,15 @@ body{
     display: inline-block;
     color: white;
     background-color: #ccc;
+}
+
+.message.me span{
+    border-radius: 20px;
+    height: auto;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 8px 12px;
+    display: inline-block;
+    color: white;
+    background-color: #aaa;    
 }
