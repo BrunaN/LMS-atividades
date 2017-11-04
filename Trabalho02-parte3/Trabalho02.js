@@ -50,7 +50,7 @@ function showMessages(group){
         }
     }
 
-    xhttp.open('GET','http://rest.learncode.academy/api/Bruna/'+id, true);
+    xhttp.open('GET','https://rest.learncode.academy/api/Bruna/'+id, true);
     xhttp.send();
 
 }
@@ -97,5 +97,5 @@ xhttp.onreadystatechange = function(){
         }
     }
 }
-xhttp.open('GET','http://rest.learncode.academy/api/Bruna/groups', true);
+xhttp.open('GET','https://rest.learncode.academy/api/Bruna/groups', true);
 xhttp.send();
