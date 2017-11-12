@@ -1,5 +1,7 @@
 let idLogin = window.localStorage.getItem("idLogin");
 
+let search = false;
+
 window.addEventListener("load", function(){
     console.log(idLogin);
     if(idLogin == "null"){
@@ -149,6 +151,8 @@ function showMessage(msg, contact){
     if(contact==idLogin){
         message.classList.add("active");
     }
+
+    search == false;
 }
 
 let buttonSend = document.querySelector(".button-send .button");
@@ -195,6 +199,10 @@ function showGroups(Group){
     groupsHtml.push(group);
 
     group.addEventListener("click", function(){
+        if(search == true){
+            return;
+        }
+        search == true;
         // console.log(Group);
         buttonSend.addEventListener("click", function(event){
             event.preventDefault();
