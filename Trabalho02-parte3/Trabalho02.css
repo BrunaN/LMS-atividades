@@ -33,13 +33,17 @@ body{
     font-weight: bold;
 }
 
-.layout .header .button-login{
+.layout .header .button-login, .button-logout{
     float: right;
     width: 110px;
     height: 100%;
     line-height: 50px;
     text-align: center;
     box-sizing: border-box;
+}
+
+.layout .header .button-logout{
+    display: none;
 }
 
 .button {
@@ -67,14 +71,61 @@ body{
     box-sizing: border-box;
 }
 
-.groups-list {
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 900px;
+    margin: auto;
+    height: 100vh;
+    z-index: 20;
+}
+
+.modal .login{
+    position: relative;
+    background-color: #ccc;
+    width: 450px;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+}
+
+.modal .modal-overlay{
+    background-color:rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    width: 900px;
+    height: 100%;
+}
+
+.modal .login .close{
+    float: right;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.groups {
     float: left;
-    overflow: auto;
     width: 240px;
     height: calc(100vh - 50px);
     z-index: 1;
     box-sizing: border-box;
     border-right: 1px solid rgba(0, 0, 0, .10);
+}
+
+.groups-list{
+    overflow: auto;
+    height: calc(100vh - 270px);
+    z-index: 1;
+    box-sizing: border-box;
 }
 
 .groups-list::-webkit-scrollbar {
@@ -125,13 +176,109 @@ body{
     line-height: 50px;
 }
 
-.messages{
+.add-group{
+    height: 220px;
+    z-index: 1;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, .10);
+    padding: 20px 15px 10px 10px;
+    font-size: 15px;
+}
+
+.add-group #group-name, #group-id{
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 7px;
+    border: 1px solid rgba(0, 0, 0, .30);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.add-group .button-add{
+    float: right;
+    height: 100%;
+    line-height: 50px;
+    box-sizing: border-box;
+    margin-top: 2px;
+}
+
+.messages-content{
     width: 658px;
     box-sizing: border-box;
-    padding: 10px;
     float: left;
-    overflow: auto;
     height: calc(100vh - 50px);
+    position: relative;
+    z-index: 1;
+}
+
+/* .loading{
+    display: block;
+}
+
+.opacity{
+    position: absolute;
+    left:50%;
+    top: 40%;
+    width: 40px;
+    height: 40px;
+    background-color:  pink;
+    border-radius: 50%;
+    animation-name: opacity;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes opacity{
+    to{
+        transform: scale(0);
+        opacity: 1;
+    }from{
+        transform: scale(1);
+        opacity: 0;
+    }
+} */
+
+.messages{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: auto;
+    height: 90%;
+}
+
+.send-message{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, .10);
+    height: calc(10% - 1px);
+    font-size: 15px;
+}
+
+.send-message form{
+    height: 100%;
+}
+
+.send-message #message {
+    border: none;
+    width: 85%;
+    height: 100%;
+    outline: none;
+    font-size: 15px;
+    resize: none;
+}
+
+.send-message .button-send{
+    float: right;
+    width: 15%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .messages::-webkit-scrollbar {
@@ -148,10 +295,23 @@ body{
     background-color: #aaa;
     border-radius: 50px;
 }
+
 .messages .message{
     display: block;
     margin-right: 70px;
 }
+
+.message.active{
+    display: block;
+    text-align: right;
+    margin-left: 70px;
+    margin-right: 0;
+}
+
+.messages .message.active > .message-container{
+    background-color: pink;
+}
+
 .messages .message > .message-container{
     margin-bottom: 3px;
     box-sizing: border-box;
@@ -163,10 +323,19 @@ body{
 }
 
 .messages .message .name-contact{
-    padding: 4px 20px 4px 12px;
+    padding: 4px 15px 4px 12px;
     color: white;
 }
 
 .messages .message .message-contact{
-    padding: 0px 20px 4px 12px;
+    padding: 0px 15px 4px 12px;
+}
+
+.messages .message.active .name-contact{
+    padding: 4px 12px 4px 15px;
+    color: white;
+}
+
+.messages .message.active .message-contact{
+    padding: 0px 12px 4px 15px;
 }

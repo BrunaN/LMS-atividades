@@ -12,17 +12,71 @@
         <header class="header">
             <div class="name-software"><span>Nome do Software</span></div>
             <div class="button-login"><button class="button">Entrar</button></div>
+            <div class="button-logout"><button class="button">Sair</button></div>
             <div class="name-group"><span></span></div>
         </header>
-        <div class="groups-list">
+        
+        <div class="modal">
+            <div class="login">
+                <div class="close"><span>x</span></div>
+                <form action="" id="form-login">
+                    <label for="id">Digite seu ID:</label>
+                    <input type="text" id="id">
+                    <br>
+                    <button type="submit" class="button">Entrar</button>
+                </form>
+            </div>
+            <div class="modal-overlay">
 
+            </div>
         </div>
-        <div class="messages">
-            <div class="message">
-                <!-- <div class="message-container">
-                    <div class="name-contact"></div>
-                    <div class="message-contact"></div></div>
-                </div> -->
+
+        <div class="modal logout">
+            <div class="logout">
+                <div class="close"><span>x</span></div>
+                <button type="submit" class="button">Sair</button>
+            </div>
+            <div class="modal-overlay">
+    
+            </div>
+        </div>
+        
+
+        <div class="groups">
+            <div class="groups-list">
+
+            </div>
+            <div class="add-group">
+                <form id="form-login"action="">
+                    <label for="group-name">Nome do Grupo:</label>
+                    <br>
+                    <input type="text" id="group-name">
+                    <br>
+                    <label for="group-id">ID do Grupo:</label>
+                    <br>
+                    <input type="text" id="group-id">
+                    <br>
+                    <div class="button-add"><button class="button">Cadastre</button></div>
+                </form>
+            </div>
+        </div>
+        <div class="messages-content">
+            <div class="loading">
+                <div class="opacity"></div>
+            </div>
+            <div class="messages">
+                <div class="message">
+                    <!-- <div class="message-container">
+                        <div class="name-contact"></div>
+                        <div class="message-contact"></div></div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="send-message">
+                <form action="">
+                    <textarea id="message" placeholder="Digite uma mensagem..."></textarea>
+                    <div class="button-send"><button class="button">Enviar</button></div>
+                </form>
             </div>
         </div>
         <script src="Trabalho02.js"></script>
