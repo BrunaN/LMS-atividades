@@ -28,6 +28,9 @@ let groupsHtml = [];
 let addGroup = document.querySelector(".add-group");
 let sendMessages = document.querySelector(".send-message");
 
+let idInput = document.getElementById("id");
+let form = document.getElementById("form-login");
+
 function filled(text){
     if(text.trim().length > 0){
         return true
@@ -39,6 +42,7 @@ function filled(text){
 function openModal(){
     button.addEventListener("click", function(){
         modal.style.display = "block";
+        idInput.focus();
     });    
 };
 
@@ -81,9 +85,6 @@ function withoutLogin(){
 
     messages.innerHTML = "";
 }
-
-let idInput = document.getElementById("id");
-let form = document.getElementById("form-login");
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
@@ -182,6 +183,14 @@ let sending = false;
 
 let formMessage = document.getElementById("form-message");
 
+messageInput.onkeyup = function(e){
+    e = e || event;
+    if (e.keyCode === 13) {
+      buttonSendClick(e);
+    }
+    return true;
+   }
+
 function buttonSendClick(event){
     event.preventDefault();
 
@@ -253,6 +262,8 @@ function showGroups(Group){
         search = true;
 
         sendMessages.style.display = "block";
+
+        messageInput.focus();
         
         clickGroup = Group;
 
