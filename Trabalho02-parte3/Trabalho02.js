@@ -175,10 +175,12 @@ function showMessage(msg, contact){
 }
 
 let buttonSend = document.querySelector(".button-send .button");
-let messageInput = document.querySelector("#message");
+let messageInput = document.getElementById("message");
 
 let clickGroup = undefined;
 let sending = false;
+
+let formMessage = document.getElementById("form-message");
 
 function buttonSendClick(event){
     event.preventDefault();
@@ -199,7 +201,7 @@ function buttonSendClick(event){
     messages.scrollTop = messages.scrollHeight;
 }
 
-buttonSend.addEventListener("click", buttonSendClick);
+formMessage.addEventListener("submit", buttonSendClick);
 
 function sendMessage(group, message){
     let id = group.groupID;
@@ -212,7 +214,7 @@ function sendMessage(group, message){
             messageInput.value = "";
 
             messages.scrollTop = messages.scrollHeight;
-            
+
             sending = false;
         };
     };
