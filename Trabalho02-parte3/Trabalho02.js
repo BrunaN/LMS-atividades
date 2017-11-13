@@ -183,13 +183,18 @@ let sending = false;
 
 let formMessage = document.getElementById("form-message");
 
-messageInput.onkeyup = function(e){
-    e = e || event;
-    if (e.keyCode === 13) {
-      buttonSendClick(e);
+messageInput.addEventListener("keypress", function(e){
+    console.log("asdsd");
+
+    if (e.keyCode == 13 && e.shiftKey){       
+        this.value = this.value + "\n";    
+    } else if(e.keyCode == 13 && !e.shiftKey){        
+        e.preventDefault();
+        
+        buttonSendClick(e);
+        return;
     }
-    return true;
-   }
+});
 
 function buttonSendClick(event){
     event.preventDefault();

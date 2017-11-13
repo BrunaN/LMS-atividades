@@ -93,6 +93,12 @@ body{
     padding: 20px;
 }
 
+.modal .login p{
+    font-size: 18px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
 .modal .modal-overlay{
     background-color:rgba(0, 0, 0, 0.8);
     position: absolute;
