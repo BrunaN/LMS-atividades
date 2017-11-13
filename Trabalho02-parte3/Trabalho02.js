@@ -26,6 +26,14 @@ let groupsHtml = [];
 let addGroup = document.querySelector(".add-group");
 let sendMessages = document.querySelector(".send-message");
 
+function filled(text){
+    if(text.trim().length > 0){
+        return true
+    }else{
+        return false;
+    }
+};
+
 function openModal(){
     button.addEventListener("click", function(){
         modal.style.display = "block";
@@ -77,6 +85,11 @@ let form = document.getElementById("form-login");
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
+
+    if(filled(idInput.value) == false){
+        return;
+    }
+
     window.localStorage.setItem("idLogin", idInput.value);
     idLogin = window.localStorage.getItem("idLogin");
     console.log(idLogin)
@@ -108,13 +121,16 @@ function showMessages(group){
         if(xhttp.readyState==4){
             let obj = JSON.parse(xhttp.responseText);
             // console.log(obj);
-                for(let i = 0, size = obj.length; i < size; i++){
-                    // console.log(obj[i]);
-                    let msg = obj[i].message;
-                    let contact = obj[i].userName;
-                    // console.log(contact);
-                    showMessage(msg, contact);
-            };
+            for(let i = 0, size = obj.length; i < size; i++){
+                // console.log(obj[i]);
+                let msg = obj[i].message;
+                let contact = obj[i].userName;
+                // console.log(contact);
+                showMessage(msg, contact);
+            }
+
+            messages.scrollTop = messages.scrollHeight;
+
             search = false;
         };
     };
@@ -163,15 +179,21 @@ let sending = false;
 
 function buttonSendClick(event){
     event.preventDefault();
-    
+
+    if(clickGroup == undefined){
+        return;
+    }
+
     if(sending == true){
         return;
     }
     sending = true;
 
-    if(messageInput.value.trim().length > 0){
+    if(filled(messageInput.value)){
         sendMessage(clickGroup, messageInput.value);   
     }
+
+    messages.scrollTop = messages.scrollHeight;
 }
 
 buttonSend.addEventListener("click", buttonSendClick);
@@ -272,5 +294,10 @@ function postGroup(name, id){
 
 buttonAdd.addEventListener("click", function(event){
     event.preventDefault();
+
+    if(filled(groupNameInput.value) == false || filled(groupIdInput.value) == false){
+        return;
+    }
+
     postGroup(groupNameInput.value, groupIdInput.value);
 });
