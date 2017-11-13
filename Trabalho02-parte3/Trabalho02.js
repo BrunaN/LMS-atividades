@@ -18,6 +18,8 @@ let modal_overlay = document.querySelector(".modal-overlay");
 let login = document.querySelector(".login");
 let close = document.querySelector(".close");
 
+let loading = document.querySelector(".loading");
+
 let messages = document.querySelector(".messages");
 let groupsList = document.querySelector(".groups-list");
 let nameGroup = document.querySelector(".name-group");
@@ -116,9 +118,12 @@ function showMessages(group){
 
     nameGroup.appendChild(groupName);
 
+    loading.style.display = "block";
+
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(xhttp.readyState==4){
+            loading.style.display = "none";
             let obj = JSON.parse(xhttp.responseText);
             // console.log(obj);
             for(let i = 0, size = obj.length; i < size; i++){
@@ -139,8 +144,6 @@ function showMessages(group){
     xhttp.open('GET','http://rest.learncode.academy/api/Bruna1/'+id, true);
     xhttp.send();
 };
-
-let loading = document.querySelector(".loading");
 
 function showMessage(msg, contact){
     let message = document.createElement("div");
