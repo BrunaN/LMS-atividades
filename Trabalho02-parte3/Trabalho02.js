@@ -18,6 +18,14 @@ let modal_overlay = document.querySelector(".modal-overlay");
 let login = document.querySelector(".login");
 let close = document.querySelector(".close");
 
+let messages = document.querySelector(".messages");
+let groupsList = document.querySelector(".groups-list");
+let nameGroup = document.querySelector(".name-group");
+let groupsHtml = [];
+
+let addGroup = document.querySelector(".add-group");
+let sendMessages = document.querySelector(".send-message");
+
 function openModal(){
     button.addEventListener("click", function(){
         modal.style.display = "block";
@@ -73,6 +81,7 @@ form.addEventListener("submit", function(event){
     idLogin = window.localStorage.getItem("idLogin");
     console.log(idLogin)
     idInput.value = "";
+    nameGroup.innerHTML = "";
     withLogin();
     closeModal();
 })
@@ -83,14 +92,6 @@ button_logout.addEventListener("click", function(){
     console.log(idLogin)
     withoutLogin();
 });
-
-let messages = document.querySelector(".messages");
-let groupsList = document.querySelector(".groups-list");
-let nameGroup = document.querySelector(".name-group");
-let groupsHtml = [];
-
-let addGroup = document.querySelector(".add-group");
-let sendMessages = document.querySelector(".send-message");
 
 function showMessages(group){
     let name = group.groupName;
@@ -114,6 +115,7 @@ function showMessages(group){
                     // console.log(contact);
                     showMessage(msg, contact);
             };
+            search = false;
         };
     };
 
@@ -151,12 +153,26 @@ function showMessage(msg, contact){
     if(contact==idLogin){
         message.classList.add("active");
     }
-
-    search == false;
 }
 
 let buttonSend = document.querySelector(".button-send .button");
 let messageInput = document.querySelector("#message");
+
+let clickGroup = undefined;
+let sending = false;
+
+function buttonSendClick(event){
+    event.preventDefault();
+    
+    if(messageInput.value.trim().length > 0){
+        sendMessage(clickGroup, messageInput.value);   
+    }
+
+    if(sending == true){
+        return;
+    }
+    sending = true;
+}
 
 function sendMessage(group, message){
     let id = group.groupID;
@@ -165,10 +181,9 @@ function sendMessage(group, message){
     let msg = {"userName":idLogin, "message":message};
     xhttp.onreadystatechange = function(){
         if (xhttp.readyState==4){
-            // showMessages(group);
-            // console.log(idLogin);
             showMessage(messageInput.value, idLogin);
             messageInput.value = "";
+            sending = false;
         };
     };
     // xhttp.open('POST', 'http://rest.learncode.academy/api/Bruna/'+id, true);
@@ -199,16 +214,18 @@ function showGroups(Group){
     groupsHtml.push(group);
 
     group.addEventListener("click", function(){
+
         if(search == true){
             return;
         }
-        search == true;
-        // console.log(Group);
-        buttonSend.addEventListener("click", function(event){
-            event.preventDefault();
-            // console.log("funfou");
-            sendMessage(Group, messageInput.value);
-        });
+        search = true;
+        
+        clickGroup = Group;
+
+        buttonSend.removeEventListener("click", buttonSendClick);
+
+        buttonSend.addEventListener("click", buttonSendClick);
+
         messageInput.value="";
         showMessages(Group);
 
@@ -217,6 +234,7 @@ function showGroups(Group){
         };
 
         this.classList.add("active");
+
     });
 };
 
