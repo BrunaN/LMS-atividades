@@ -99,6 +99,22 @@ body{
     margin-bottom: 4px;
 }
 
+.modal .login #id{
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 7px;
+    border: 1px solid rgba(0, 0, 0, .30);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.modal .login .button{
+    float: right;
+}
+
 .modal .modal-overlay{
     background-color:rgba(0, 0, 0, 0.8);
     position: absolute;
