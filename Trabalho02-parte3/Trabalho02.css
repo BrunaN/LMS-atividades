@@ -139,7 +139,7 @@ body{
     height: 20px;
     text-align: center;
     color: white;
-    background-color: black;
+    background-color:rgba(0, 0, 0, 0.8);
     border-radius: 50%;
     cursor: pointer;
 }
