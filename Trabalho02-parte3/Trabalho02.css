@@ -83,8 +83,8 @@ body{
 
 .modal .login{
     position: relative;
-    background-color: #ccc;
-    width: 450px;
+    background-color: #eee;
+    width: 400px;
     height: 50vh;
     top: 50%;
     left: 50%;
@@ -95,8 +95,8 @@ body{
 
 .modal .login p{
     font-size: 18px;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .modal .login #id{
@@ -108,11 +108,18 @@ body{
     padding: 7px;
     border: 1px solid rgba(0, 0, 0, .30);
     border-radius: 8px;
+    background-color: #eee;
     font-size: 15px;
 }
 
+.modal .login #form-login{
+    font-size: 16px;
+    margin-top: 20px;
+}
 .modal .login .button{
     float: right;
+    background-color: #eee;
+    border: 1px solid rgba(0, 0, 0, .30);
 }
 
 .modal .modal-overlay{
