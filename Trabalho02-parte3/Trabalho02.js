@@ -61,7 +61,7 @@ function withLogin(){
     addGroup.style.display = "block";
     nameGroup.style.display = "block";
     messages.style.display = "block";
-    sendMessages.style.display = "block";
+    // sendMessages.style.display = "block";
     button.style.display = "none";
     button_logout.style.display = "block";
 }
@@ -246,6 +246,8 @@ function showGroups(Group){
             return;
         }
         search = true;
+
+        sendMessages.style.display = "block";
         
         clickGroup = Group;
 
