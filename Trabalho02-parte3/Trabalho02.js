@@ -164,15 +164,17 @@ let sending = false;
 function buttonSendClick(event){
     event.preventDefault();
     
-    if(messageInput.value.trim().length > 0){
-        sendMessage(clickGroup, messageInput.value);   
-    }
-
     if(sending == true){
         return;
     }
     sending = true;
+
+    if(messageInput.value.trim().length > 0){
+        sendMessage(clickGroup, messageInput.value);   
+    }
 }
+
+buttonSend.addEventListener("click", buttonSendClick);
 
 function sendMessage(group, message){
     let id = group.groupID;
@@ -221,10 +223,6 @@ function showGroups(Group){
         search = true;
         
         clickGroup = Group;
-
-        buttonSend.removeEventListener("click", buttonSendClick);
-
-        buttonSend.addEventListener("click", buttonSendClick);
 
         messageInput.value="";
         showMessages(Group);
