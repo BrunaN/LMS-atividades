@@ -217,9 +217,8 @@ body{
 .loading{
     display: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: calc(90% - 60px);
+    left: calc(50% - 20px);
     width: 30px;
     height: 30px;
     border: 5px solid pink;
