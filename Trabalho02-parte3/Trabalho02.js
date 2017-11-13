@@ -141,8 +141,7 @@ function showMessages(group){
         };
     };
 
-    // xhttp.open('GET','http://rest.learncode.academy/api/Bruna/'+id, true);
-    xhttp.open('GET','http://rest.learncode.academy/api/Bruna1/'+id, true);
+    xhttp.open('GET','http://rest.learncode.academy/api/Bruna/'+id, true);
     xhttp.send();
 };
 
@@ -228,8 +227,7 @@ function sendMessage(group, message){
             sending = false;
         };
     };
-    // xhttp.open('POST', 'http://rest.learncode.academy/api/Bruna/'+id, true);
-    xhttp.open('POST', 'http://rest.learncode.academy/api/Bruna1/'+id, true);
+    xhttp.open('POST', 'http://rest.learncode.academy/api/Bruna/'+id, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     let post = JSON.stringify(msg);
     xhttp.send(post);
@@ -289,8 +287,7 @@ xhttp.onreadystatechange = function(){
         };
     };
 };
-// xhttp.open('GET','http://rest.learncode.academy/api/Bruna/groups', true);
-xhttp.open('GET','http://rest.learncode.academy/api/Bruna1/groups', true);
+xhttp.open('GET','http://rest.learncode.academy/api/Bruna/groups', true);
 xhttp.send();
 
 let buttonAdd = document.querySelector(".button-add .button");
@@ -307,8 +304,7 @@ function postGroup(name, id){
             groupIdInput.value="";
         };
     };
-    // xhttp.open('POST', 'http://rest.learncode.academy/api/Bruna/groups', true);
-    xhttp.open('POST','http://rest.learncode.academy/api/Bruna1/groups', true);
+    xhttp.open('POST', 'http://rest.learncode.academy/api/Bruna/groups', true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     let post = JSON.stringify(group);
     xhttp.send(post);
