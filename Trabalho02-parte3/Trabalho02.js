@@ -210,6 +210,9 @@ function sendMessage(group, message){
         if (xhttp.readyState==4){
             showMessage(messageInput.value, idLogin);
             messageInput.value = "";
+
+            messages.scrollTop = messages.scrollHeight;
+            
             sending = false;
         };
     };
