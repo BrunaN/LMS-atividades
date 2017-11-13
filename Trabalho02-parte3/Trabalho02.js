@@ -184,11 +184,7 @@ let sending = false;
 let formMessage = document.getElementById("form-message");
 
 messageInput.addEventListener("keypress", function(e){
-    console.log("asdsd");
-
-    if (e.keyCode == 13 && e.shiftKey){       
-        this.value = this.value + "\n";    
-    } else if(e.keyCode == 13 && !e.shiftKey){        
+    if(e.keyCode == 13 && !e.shiftKey){        
         e.preventDefault();
         
         buttonSendClick(e);
