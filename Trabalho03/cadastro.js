@@ -1,6 +1,6 @@
 let usuarios = [];
 
-$.get("http://rest.learncode.academy/api/Bruna/usuarios/", function(response){
+$.get("http://rest.learncode.academy/api/Bruna/usuariosLogin/", function(response){
   usuarios = response;
   console.log(usuarios);
 });
@@ -53,7 +53,7 @@ $(function(){
 
         $.ajax({
             type:'POST',
-            url:'http://rest.learncode.academy/api/Bruna/usuarios/',
+            url:'http://rest.learncode.academy/api/Bruna/usuariosLogin/',
             data: {email: email, senha: senha},
             success: function(data){
                 usuarios.push({
@@ -101,7 +101,7 @@ $(function(){
 
         for(let i=0, len = usuarios.length; i < len ; i++){
             console.log(usuarios[i]);
-            
+
             console.log(email);
             console.log(usuarios[i].email);
 

@@ -160,7 +160,7 @@ function exibirCompra(compra){
     $divCompras.append(template);
 }
 
-$.get("http://rest.learncode.academy/api/Bruna/compras/", function(response){
+$.get("http://rest.learncode.academy/api/Bruna/comprasLoja/", function(response){
   comprasFeitas = response;
   exibirComprasFeitas();
 });
@@ -170,7 +170,7 @@ $("#finalizar").click(function(){
     carrinho.date = new Date();
 
     $.ajax({
-        url: "http://rest.learncode.academy/api/Bruna/compras/",
+        url: "http://rest.learncode.academy/api/Bruna/comprasLoja/",
         type: "POST",
         data: carrinho,
         success: function(data){
