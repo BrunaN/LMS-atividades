@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="trabalho03.css">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">Loja</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right" id="comLogin">
+                    <li class="dropdown">
+                         <a href="" class="dropdown-toggle" data-toggle="dropdown" id="nome"><i class="glyphicon glyphicon-user"></i> <span id="userEmail"></span><b class="caret"></b></a>
+                         <ul class="dropdown-menu" id="user_info">
+                             <li><a href="compras.html">Compras <i class="glyphicon glyphicon-list-alt pull-right"></i></a></li>
+                             <li class="divider"></li>
+                             <li><a id="logout">Sair <i class="glyphicon glyphicon-log-out pull-right"></i></a></li>
+                         </ul>
+                     </li>
+                     <li class="dropdown">
+                         <a href="#" id="itens-card" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span><span class="caret"></span></a>
+                         <ul class="dropdown-menu dropdown-cart" role="menu" id="dropdown-cart">
+                             
+                         </ul>
+                     </li>
+                 </ul>
+            <ul class="nav navbar-nav navbar-right" id="semLogin">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="form" role="form" id="login" novalidate>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="email">Email:</label>
+                                            <input name="email" ng-model="email" type="email" class="form-control" id="email" placeholder="email">
+                                            <p class="text-danger hide">Email inválido!</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="senha">Senha:</label>
+                                            <input name="senha" ng-model="senha" type="password" class="form-control" id="senha" placeholder="senha">
+                                            <p class="text-danger hide">Preencha a senha!</p>
+                                        </div>
+                                        <div id="falhaNoLogin" class="hide">
+                                            <p class="text-danger">Login ou senha inválidos</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-block">Entrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown">Cadastro <b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                    <!-- <li class="dropdown-header">Dropdown header</li> -->
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">             
+                                    <form class="form" role="form" id=cadastro novalidate>
+                                        <div class="form-group">
+                                            <label for="email">Email*</label>
+                                            <input name="email" ng-model="email" type="email" class="form-control" id="email" placeholder="seuemail@gmail.com">
+                                            <p class="text-danger hide">Email inválido ou já cadastrado!</p>                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="senha">Senha*</label>
+                                            <input name="senha" ng-model="senha" type="password" class="form-control" id="senha" placeholder="*******">
+                                            <p class="text-danger hide">Preencha a senha!</p>                                            
+                                        </div>
+                                        <div id="falhaNoLogin" class="hide">
+                                            <p class="text-danger">Login ou senha inválidos</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-block">Cadastrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="divProdutos">
+                    
+            </div> 
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="utils.js"></script>      
+    <script src="cadastro.js"></script>
+    <script src="lista_compras.js"></script>
+    <script src="carrinho.js"></script>
+    <script src="produtos.js"></script>
+    <script src="logout.js"></script>            
+</body>
+</html>
