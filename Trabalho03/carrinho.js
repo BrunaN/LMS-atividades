@@ -2,19 +2,19 @@
     $divItens = $("#dropdown-cart");
 
     function exibirCarrinho(){
-        $divItens.html(""); 
+        $divItens.html("");
 
         let carrinho = window.localStorage.getItem("carrinho");
-        
+
         if(carrinho == null || carrinho == "undefined"){
             criarCarrinho();
-        
+
             carrinho = {valorTotal: 0, produtos: []};
         }else{
             carrinho = JSON.parse(carrinho);
         }
 
-        console.log(carrinho);        
+        console.log(carrinho);
 
         for(let i=0, len = carrinho.produtos.length; i<len; i++){
             exibirItemCarrinho(carrinho.produtos[i]);
@@ -28,7 +28,7 @@
 
             $divItens.append(template);
         }else{
-            $divItens.append('<li><p>Carrinho Vazio!</p></li>');
+            $divItens.append('<li style="padding:5px;">Carrinho Vazio!</li>');
         }
     }
 

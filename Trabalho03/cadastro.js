@@ -24,19 +24,19 @@ function emailCadastrado(email){
             return true;
         }
     }
-
-    console.log(usuarios);
     return false;
 }
 
 $(function(){
     $("#cadastro").submit(function(){
+        $("#cadastroRealizado").addClass("hide");
+
         let $email = $("#email", this);
-        let $senha = $("#senha", this); 
+        let $senha = $("#senha", this);
 
         let email = $email.val();
         let senha = $senha.val();
-    
+
         let _this = this;
 
         console.log(emailCadastrado(email));
@@ -66,20 +66,22 @@ $(function(){
             success: function(data){
                 usuarios.push({
                     email: email,
-                    senha: senha 
+                    senha: senha
                 });
                 $email.val("");
                 $senha.val("");
+
+                $("#cadastroRealizado").removeClass("hide");
             }
         });
-    
+
         return false;
     });
 
     $("#login").submit(function(){
         let $email = $("#email", this);
         let $senha = $("#senha", this);
-        
+
         let email = $email.val();
         let senha = $senha.val();
 
@@ -105,11 +107,22 @@ $(function(){
 
         let flag = false;
 
-        for(let i=0; i < usuarios.length; i++){
-            if(usuarios[i].email==email && usuarios[i].senha==senha){
+        for(let i=0, len = usuarios.length; i < len ; i++){
+            console.log(email);
+            console.log(usuarios[i].email);
+
+            console.log(senha);
+            console.log(usuarios[i].senha);
+
+            if(usuarios[i].email == email && usuarios[i].senha == senha){
                 window.localStorage.setItem("emailLogin", usuarios[i].email);
                 $("#comLogin").show();
                 $("#semLogin").hide();
+
+                $("form", ".produto").show();
+                $(".produto .thumbnail").css({
+                  height: "480px"
+                });
                 flag = true;
                 break;
             }
@@ -120,16 +133,7 @@ $(function(){
         }else{
             $("#falhaNoLogin").addClass("hide");
         }
-    
+
         return false;
     });
-
-    if(verificarLogin()){
-        $("#comLogin").show();
-        $("#semLogin").hide();
-    }else{
-        $("#comLogin").hide();
-        $("#semLogin").show();
-    }
-    
 });

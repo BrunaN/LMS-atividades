@@ -12,9 +12,9 @@ if(carrinho == null || carrinho == "undefined"){
 
 
 function exibirFinalizarCompra(){
-    $divItensFinalizarCompra.html(""); 
-    
-    
+    $divItensFinalizarCompra.html("");
+
+
     for(let i=0, len = carrinho.produtos.length; i<len; i++){
         exibirItemFinalizarCompra(carrinho.produtos[i]);
     }
@@ -26,7 +26,7 @@ function exibirFinalizarCompra(){
         $('.panel-footer button').attr("disabled", "disabled");
         $divItensFinalizarCompra.html("Nenhum produto no carinho!");
     }else{
-        $('.panel-footer button').removeAttr("disabled");        
+        $('.panel-footer button').removeAttr("disabled");
     }
 }
 
@@ -72,16 +72,17 @@ let emailLogin = window.localStorage.getItem("emailLogin");
 
 if(!verificarLogin() || emailLogin == null || emailLogin == "undefined"){
     window.location.href = "index.html";
-}   
+}
 
 
 let comprasFeitas = [];
 let $divCompras = $("#divCompras");
+let $tableCompras = $("#tableCompras");
 
 function exibirComprasFeitas(){
     let compras = [];
 
-    $divCompras.html("<tr><th>Data</th><th>Hora</th><th>Valor Total</th></tr>");
+    $divCompras.html("");
 
     for(let i=0, len = comprasFeitas.length; i<len; i++){
         if(comprasFeitas[i].email == emailLogin){
@@ -90,7 +91,9 @@ function exibirComprasFeitas(){
     }
 
     if(compras.length > 0){
-        $divCompras.removeClass("hide");
+      $tableCompras.removeClass("hide");
+    }else{
+      $tableCompras.addClass("hide");
     }
 
     for(let i=0, len = compras.length; i<len; i++){
@@ -105,7 +108,7 @@ function dataFormatada(data){
     let mes = data.getMonth()+1;
     if (mes.toString().length == 1)
       mes = "0"+mes;
-    let ano = data.getFullYear();  
+    let ano = data.getFullYear();
     return dia+"/"+mes+"/"+ano;
 }
 
@@ -131,7 +134,7 @@ function exibirCompra(compra){
                 horaFormatada(d),
             '</td>',
             '<td>',
-                ''+compra.valorTotal+'',
+                'R$ '+compra.valorTotal+',00',
             '</td>',
         '</tr>',
     ].join('');
