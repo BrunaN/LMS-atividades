@@ -41,18 +41,18 @@ function addCarrinho(produto, qtd){
     produto.qtd = qtd;
     carrinho.produtos.push(produto);
 
-    window.localStorage.setItem("carrinho", JSON.stringify(carrinho));    
+    window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
 function removerCarrinho(produto){
     let carrinho = window.localStorage.getItem("carrinho");
-    
+
     if(carrinho == null || carrinho == "undefined"){
         return false;
     }
-    
+
     carrinho = JSON.parse(carrinho);
-    
+
     let produtos = [];
     let valor = 0;
 
@@ -66,16 +66,16 @@ function removerCarrinho(produto){
     carrinho.produtos = produtos;
     carrinho.valorTotal = valor;
 
-    window.localStorage.setItem("carrinho", JSON.stringify(carrinho));    
+    window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
 
 function alterarQtd(produto, qtd){
     let carrinho = window.localStorage.getItem("carrinho");
-    
+
     if(carrinho == null || carrinho == "undefined"){
         return false;
     }
-    
+
     carrinho = JSON.parse(carrinho);
 
     for(let i = 0, len = carrinho.produtos.length; i < len; i++){
@@ -85,5 +85,13 @@ function alterarQtd(produto, qtd){
         }
     }
 
-    window.localStorage.setItem("carrinho", JSON.stringify(carrinho));    
+    let valor = 0;
+
+    for(let i = 0, len = carrinho.produtos.length; i < len; i++){
+        valor += carrinho.produtos[i].valor * carrinho.produtos[i].qtd;
+    }
+
+    carrinho.valorTotal = valor;
+
+    window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }

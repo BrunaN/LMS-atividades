@@ -1,16 +1,8 @@
 let usuarios = [];
 
-$.ajax({
-    type:'GET',
-    url:'http://rest.learncode.academy/api/Bruna/usuarios/',
-    dataType: "json",
-    success: function(data){
-        usuarios = data;
-        console.log(usuarios);
-    },
-    error: function(error){
-        console.log(error);
-    }
+$.get("http://rest.learncode.academy/api/Bruna/usuarios/", function(response){
+  usuarios = response;
+  console.log(usuarios);
 });
 
 function validateEmail(email) {
@@ -108,6 +100,8 @@ $(function(){
         let flag = false;
 
         for(let i=0, len = usuarios.length; i < len ; i++){
+            console.log(usuarios[i]);
+            
             console.log(email);
             console.log(usuarios[i].email);
 

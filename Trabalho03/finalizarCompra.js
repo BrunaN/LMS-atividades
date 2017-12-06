@@ -57,12 +57,30 @@ function exibirItemFinalizarCompra(item){
 
     $("button", "#item"+item.id).click(function(){
         removerCarrinho(item);
+        carrinho = window.localStorage.getItem("carrinho");
+
+        if(carrinho == null || carrinho == "undefined"){
+            criarCarrinho();
+
+            carrinho = {valorTotal: 0, produtos: []};
+        }else{
+            carrinho = JSON.parse(carrinho);
+        }
         exibirFinalizarCompra();
         exibirCarrinho();
     });
 
     $("input", "#item"+item.id).change(function(){
         alterarQtd(item, parseInt($(this).val()));
+        carrinho = window.localStorage.getItem("carrinho");
+
+        if(carrinho == null || carrinho == "undefined"){
+            criarCarrinho();
+
+            carrinho = {valorTotal: 0, produtos: []};
+        }else{
+            carrinho = JSON.parse(carrinho);
+        }
         exibirFinalizarCompra();
         exibirCarrinho();
     });
@@ -142,14 +160,9 @@ function exibirCompra(compra){
     $divCompras.append(template);
 }
 
-$.ajax({
-    url:"http://rest.learncode.academy/api/Bruna/compras/",
-    type: "GET",
-    dataType: "json",
-    success: function(data){
-        comprasFeitas = data;
-        exibirComprasFeitas();
-    }
+$.get("http://rest.learncode.academy/api/Bruna/compras/", function(response){
+  comprasFeitas = response;
+  exibirComprasFeitas();
 });
 
 $("#finalizar").click(function(){
